@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fluff Puff</title>
+    <meta charset="UTF-8">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div id="nav" class="row justify-center align-center">
+        <div class="nav-left">
+            <div class="dropdown">
+                <button class="dropdown-menu underline">Product</button>
+                <div class="dropdown-content">
+                    <a href="product_bedroom.html" class="underline" style="padding-top:38px;">Bedroom</a>
+                    <a href="product_living.html" class="underline" style="padding-bottom:28px;">Living room</a>
+                </div>
+            </div>
+
+            <a href="about.html" class="underline">About</a>
+        </div>
+
+        <a href="index.html" class="logo">FLUFF PUFF</a>
+        <img class="nav-right" src="img/ico-cart.svg" alt="cart" width="24" height="24">
+    </div>
+
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <p class="eyebrow text-beige">ARTISAN HAND-CRAFTED PILLOW</p>
+        <span class="hand-writing hero-title">Pillows to light up your room</span>
+        <span class="text-beige">We specialize in throw pillows that are designed to turn any room cozy. Each pillow
+            cover
+            <br> is hand-knitted from thick and soft hand-dyed cotton yarn in our artisan workshop.</span>
+        <button class="hero-button">
+            <span class="text-beige">EXPLORE</span>
+            <img style="margin-left: 8px;" src="img/ico-arrow-down.svg" alt="arrow" width="14" height="14">
+        </button>
+    </div>
+
+    <!-- Collections -->
+    <p class="eyebrow" style="margin-top: 90px; margin-bottom: 44px;">COLLECTION</p>
+    <div class="collection-container row">
+        <div class="column" style="margin-right: 20px;">
+            <a href="product_bedroom.html">
+                <img class="wh-100" src="img/img-bedroom.png" alt="Bedroom">
+            </a>
+            <div class="row align-center">
+                <a href="product_bedroom.html">
+                    <h2>Shop Bedroom Pillows</h2>
+                </a>
+                <img style="margin-left: 8px;" src="img/ico-arrow.svg" alt="arrow" width="20" height="20">
+            </div>
+
+            <span>Bed pillow, Round pillow</span>
+            <span><i>3 filler types & 4 colors available</i></span>
+        </div>
+
+        <div class="column">
+            <a href="product_living.html">
+                <img class="wh-100" src="img/img-living.png" alt="LivingRoom">
+            </a>
+            <div class="row align-center">
+                <a href="product_living.html">
+                    <h2>Shop Living Room Pillows</h2>
+                </a>
+                <img style="margin-left: 8px;" src="img/ico-arrow.svg" alt="arrow" width="20" height="20">
+            </div>
+
+            <span>Bed pillow, Round pillow</span>
+            <span><i>3 filler types & 4 colors available</i></span>
+        </div>
+    </div>
+
+    <!-- Location -->
+    <div id="location" style="margin-top: 100px"></div>
+
+    <p class="eyebrow" style="margin-top: 200px; margin-bottom: 20px;">LOCATION</p>
+    <div style="margin-bottom: 8px;" class="row justify-center">
+        <img src="img/ico-map.svg" alt="map" width="20" height="20">
+        <span class="text-12-black">149 West Bridge St, Homestead, PA 15120</span>
+    </div>
+    <div style="margin-bottom: 40px;" class="row justify-center">
+        <img src="img/ico-call.svg" alt="call" width="20" height="20">
+        <span class="text-12-black">(412) 476-9157</span>
+    </div>
+
+
+    <div style="width:100%;" class="row justify-center">
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3037.9826708310115!2d-79.91512374813311!3d40.40923467926462!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8834ee243218548b%3A0x72e1d44ca62454fd!2s149%20West%20Bridge%20St%2C%20Homestead%2C%20PA%2015120%2C%20USA!5e0!3m2!1sen!2sca!4v1633744298527!5m2!1sen!2sca"
+            height="660" style="border:0;width:90%;" loading="lazy"></iframe>
+    </div>
+
+    <!-- Go to Top -->
+    <button onclick="goToTop()" id="gotoTopButton">
+        <img src="img/ico-top.svg" alt="top" width="50" height="50">
+    </button>
+
+    <script>
+        const topButton = document.getElementById('gotoTopButton')
+        document.addEventListener('scroll', function () {
+            if (window.scrollY > 20) {
+                topButton.style.visibility = 'visible';
+            } else {
+                topButton.style.visibility = 'hidden';
+            }
+        })
+        function goToTop() {
+            scroll(0, 0)
+        }
+    </script>
+
+    <!-- Footer -->
+    <div class="footer column justify-center align-center">
+        <div>
+            <a href="index.html" class="logo">FLUFF PUFF</a>
+        </div>
+        <div style="margin-top: 12px;">
+            <span>We specialize in throw pillows that are<br>designed to turn any room cozy.</span>
+        </div>
+        <div class="text-12-black" style="margin-top: 36px">
+            <a href="product_bedroom.html" class="underline" style="margin-right: 58px;">Product</a>
+            <a href="about.html" class="underline">About</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

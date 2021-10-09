@@ -1,0 +1,353 @@
+/* add color variables globally */
+:root {
+  --main-pink: #dda79d;
+  --beige: #fff9f1;
+  --bg-pink: #ebdfe1;
+  --text-black: #494037;
+  --text-gray: #928c87;
+  --text-light-gray: #d3cccd;
+}
+/* add custom font */
+@font-face {
+  font-family: SFUIText-Regular;
+  src: url(SFUIText-Regular.woff);
+  src: url(SFUIText-Bold.woff);
+  src: url(SFUIText-Medium.woff);
+  src: url(SurederStylish.ttf);
+}
+/* top navigation banner */
+#nav {
+  background-color: var(--bg-pink);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  font-family: "SFUIText-Regular";
+  font-weight: 400;
+  font-size: 12pt;
+  color: var(--text-black);
+  border-bottom-width: 1px;
+  border-bottom-color: var(--text-light-gray);
+  border-bottom-style: solid;
+}
+
+.logo {
+  letter-spacing: 0.14em;
+  color: var(--main-pink) !important;
+  text-decoration: none;
+  font-family: "SFUIText-Regular";
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.logo:hover {
+  text-decoration: none;
+}
+
+/* hero section image*/
+.hero {
+  margin-top: 80px;
+  background-image: url("img/img-hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 804px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* hero section title*/
+.hand-writing {
+  font-family: SurederStylish;
+  margin-bottom: 1vw;
+}
+
+.hero-title {
+  font-size: 98px;
+  color: var(--beige);
+}
+
+.product-title {
+  font-size: 60px;
+  color: var(--main-pink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  background-color: var(--bg-pink);
+  padding: 0;
+  margin: 0;
+}
+
+/* navigation bar links*/
+.underline:hover {
+  text-underline-offset: 8px;
+  text-decoration: underline;
+  color: var(--text-black);
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: var(--text-black);
+}
+
+/* product detail page */
+h2:hover {
+  text-underline-offset: 5px;
+  text-decoration: underline;
+}
+
+/* eyebrow text style */
+.eyebrow {
+  font-family: "SFUIText-Bold";
+  font-weight: 700;
+  font-size: 12pt;
+  text-align: center;
+  color: var(--main-pink);
+  letter-spacing: 0.14em;
+}
+
+.brow-left {
+  text-align: left !important;
+}
+
+/* product detail page*/
+.product-name {
+  font-family: "SFUIText-Regular";
+  font-size: 24px;
+  font-weight: 200;
+  color: var(--text-black);
+  margin-top: -3px;
+}
+
+.price {
+  text-align: right;
+}
+
+h2 {
+  font-family: "SFUIText-Regular";
+  font-size: 20px;
+  font-weight: 200;
+  color: var(--text-black);
+}
+
+span {
+  font-family: "SFUIText-Regular";
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-gray);
+  line-height: 1.5;
+}
+
+.option-title {
+  margin-top: 40px;
+  font-family: "SFUIText-Regular";
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--text-black);
+  line-height: 1.5;
+}
+
+.option-selected {
+  font-family: "SFUIText-Regular";
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--text-gray);
+  line-height: 1.5;
+}
+
+/* Image Layout*/
+.collection-container {
+  width: 100%;
+  justify-content: center;
+}
+
+.container-align-left {
+  width: 100%;
+  justify-content: left;
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.justify-space-between {
+  justify-content: space-between;
+}
+
+.text-12-black {
+  font-family: "SFUIText-Regular";
+  font-weight: 400;
+  font-size: 12pt;
+  color: var(--text-black);
+}
+
+/* Buttons */
+.hero-button {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--main-pink);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding: 16px 24px;
+  margin-top: 40px;
+  letter-spacing: 0.14em;
+}
+
+.text-beige {
+  color: var(--beige);
+}
+/* left section inside of navigation bar */
+.nav-left {
+  position: absolute;
+  left: 50px;
+}
+/* right section inside of navigation bar */
+.nav-right {
+  position: absolute;
+  right: 50px;
+}
+/* footer style */
+.footer {
+  margin-top: 160px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 288px;
+  background-color: var(--bg-pink);
+  text-align: center;
+  border-top-width: 1px;
+  border-top-color: var(--text-light-gray);
+  border-top-style: solid;
+}
+
+#gotoTopButton {
+  position: fixed;
+  visibility: hidden;
+  right: 40px;
+  bottom: 100px;
+  z-index: 10;
+  border: none;
+  background-color: transparent;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* navigation dropdown */
+.dropdown {
+  display: inline-block;
+  position: relative;
+}
+.dropdown-content {
+  display: none;
+  top: 22px;
+  left: -14px;
+  position: absolute;
+  width: 100%;
+  overflow: auto;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropdown-content a {
+  display: block;
+  color: var(--text-black);
+  padding: 20px;
+  text-decoration: none;
+  background-color: var(--bg-pink);
+  border-radius: 2px;
+}
+
+.dropdown-menu {
+  margin-right: 58px;
+  background-color: var(--bg-pink);
+  border: none;
+  font-family: "SFUIText-Regular";
+  font-weight: 400;
+  font-size: 12pt;
+  color: var(--text-black);
+}
+
+.sub-active {
+  text-underline-offset: 8px;
+  text-decoration: underline;
+  color: var(--text-black);
+}
+
+/* product detail page options */
+.button-filler-selected {
+  margin-top: 12px;
+  margin-right: 8px;
+  display: flex;
+  flex-direction: row;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 8px;
+  background: var(--main-pink);
+  color: var(--text-black);
+  font-family: "SFUIText-Medium";
+  font-weight: 500;
+  font-size: 11pt;
+}
+
+.button-filler-x-selected {
+  margin-top: 12px;
+  margin-right: 8px;
+  display: flex;
+  flex-direction: row;
+  border: none;
+  border-radius: 5px;
+  padding: 6px 8px;
+  background: var(--beige);
+  opacity: 0.7;
+  color: var(--text-gray);
+  font-family: "SFUIText-Regular";
+  font-weight: 400;
+  font-size: 11pt;
+}
+
+.button-cart {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  width: 512px;
+  height: 58px;
+  background: var(--main-pink);
+  color: var(--text-black);
+  font-family: "SFUIText-Regular";
+  font-weight: 400;
+  font-size: 12pt;
+}
+
+/* image size */
+.wh-100 {
+  width: 100%;
+  height: 100%;
+}
