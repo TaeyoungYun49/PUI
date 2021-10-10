@@ -8,8 +8,7 @@ Homework 5
 2. Made 4 product detail pages
 3. Created a button for scrolling back to the top of the page using javascript (index.html)
 4. Added dropdown menu on the navigation bar
-5. Made a shortcut button for a specific section, “Location.”
-6. Embedded Google map using HTML Iframes
-7. Created footer for the website.
+5. Embedded Google map using HTML Iframes
+6. Created footer for the website.
 
 Website Link: <a href="https://taeyoung-fluff-puff.netlify.app/index.html"> Netlify Deployed Website </a>
