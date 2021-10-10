@@ -1,4 +1,4 @@
-### Programming Useable Interfaces <br>
+### Programming Usable Interfaces <br>
 Fall 2021 MHCI Carnegie Mellon University <br>
 Homework 5
 
