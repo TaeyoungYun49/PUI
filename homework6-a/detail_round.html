@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Living Room Product</title>
+    <meta charset="UTF-8">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <div id="nav" class="row justify-center align-center">
+        <div class="nav-left">
+            <div class="dropdown">
+                <button class="dropdown-menu underline">Product</button>
+                <div class="dropdown-content">
+                    <a href="product_bedroom.html" class="underline" style="padding-top:38px;">Bedroom</a>
+                    <a href="product_living.html" class="underline" style="padding-bottom:28px;">Living room</a>
+                </div>
+            </div>
+
+            <a href="about.html" class="underline">About</a>
+        </div>
+
+        <a href="index.html" class="logo">FLUFF PUFF</a>
+        <div class="nav-right">
+            <img onclick="clickCart()" src="img/ico-cart.svg" alt="cart" width="24" height="24">
+            <div id="cart-badge" class="cart-badge"></div>
+        </div>
+    </div>
+
+    <!-- Product Detail -->
+
+    <div class="collection-container row">
+        <div style="margin-top:200px; margin-right: 40px;">
+            <img src="img/product-detail-round.png" alt="Round Pillow" width="500" height="658">
+        </div>
+
+        <div class="column" style="margin-top:180px;">
+            <div class="column">
+                <div>
+                    <p class="eyebrow brow-left">BEDROOM</p>
+                </div>
+                <div class="row justify-space-between">
+                    <span class="product-name">Round Pillow</span>
+                    <span id="price" class="product-name price">$38</span>
+                </div>
+
+            </div>
+
+            <span class="option-title">Filler</span>
+            <span class="option-selected" style="margin-top: 4px;"> Recommended: Duck Down</span>
+
+            <div class="container-align-left row">
+                <button id="memoryfoam-button" onclick="clickMemoryFoam()" class="button-filler-selected">Memory
+                    Foam
+                </button>
+                <button id="duckdown-button" onclick="clickDuckDown()" class="button-filler-x-selected">Duck
+                    Down
+                </button>
+                <button id="polyblend-button" onclick="clickPolyblend()" class="button-filler-x-selected">Hypoallergenic
+                    Poly-blend
+                </button>
+            </div>
+            <span class="option-title">Color</span>
+            <span id="color-option-text" class="option-selected" style="margin-top: 4px;"> Afterschool Special</span>
+
+            <div class="product-color-img-list">
+                <img onclick="clickColor1()" id="color-1" class="product-color-img-selected" src="img/color-1-pink.svg"
+                    alt="color-pink" width="16" height="16">
+                <img onclick="clickColor2()" id="color-2" class="product-color-img" src="img/color-2-white.svg"
+                    alt="color-pink" width="16" height="16">
+                <img onclick="clickColor3()" id="color-3" class="product-color-img" src="img/color-3-denim.svg"
+                    alt="color-pink" width="16" height="16">
+                <img onclick="clickColor4()" id="color-4" class="product-color-img" src="img/color-4-rainy.svg"
+                    alt="color-pink" width="16" height="16">
+            </div>
+
+            <span class="option-title">Quantity</span>
+            <div class="quantity-input-box" style="margin-top: 10px;">
+                <button onclick="clickMinus()" class="quantity-input-left-button">
+                    <img src="img/ico-minus.png">
+                </button>
+                <div id="quantity-text" class="quantity-input-text">
+                    1
+                </div>
+                <button onclick="clickPlus()" class="quantity-input-right-button">
+                    <img src="img/ico-plus.png">
+                </button>
+            </div>
+
+            <div id="added-count" class="text-14-black"
+                style="text-align: center;margin-top: 22px; height: 20px;visibility: hidden;">
+            </div>
+            <button onclick="clickAddToCart()" class="button-cart">Add to Cart</button>
+
+        </div>
+    </div>
+
+
+
+
+
+
+    <!-- Footer -->
+    <div class="footer column justify-center align-center">
+        <div>
+            <a href="index.html" class="logo">FLUFF PUFF</a>
+        </div>
+        <div style="margin-top: 12px;">
+            <span>We specialize in throw pillows that are<br>designed to turn any room cozy.</span>
+        </div>
+        <div class="text-12-black" style="margin-top: 36px">
+            <a href="product_bedroom.html" class="underline" style="margin-right: 58px;">Product</a>
+            <a href="about.html" class="underline">About</a>
+        </div>
+    </div>
+
+</body>
+<script>
+    var quantity = 1
+    var currentPrice = 38
+    var filler = 'Memory Foam'
+    var color = 'After School Special'
+    var colorValue = '#ECBDB0'
+
+    function clickMemoryFoam() {
+        document.getElementById('memoryfoam-button').className = 'button-filler-selected'
+        document.getElementById('duckdown-button').className = 'button-filler-x-selected'
+        document.getElementById('polyblend-button').className = 'button-filler-x-selected'
+        currentPrice = 38
+        filler = 'Memory Foam'
+        document.getElementById('price').innerText = '$' + currentPrice * quantity
+    }
+    function clickDuckDown() {
+        document.getElementById('memoryfoam-button').className = 'button-filler-x-selected'
+        document.getElementById('duckdown-button').className = 'button-filler-selected'
+        document.getElementById('polyblend-button').className = 'button-filler-x-selected'
+        currentPrice = 32
+        filler = 'Duck Down'
+        document.getElementById('price').innerText = '$' + currentPrice * quantity
+    }
+    function clickPolyblend() {
+        document.getElementById('memoryfoam-button').className = 'button-filler-x-selected'
+        document.getElementById('duckdown-button').className = 'button-filler-x-selected'
+        document.getElementById('polyblend-button').className = 'button-filler-selected'
+        currentPrice = 34
+        filler = 'Hypoallergenic Poly-blend'
+        document.getElementById('price').innerText = '$' + currentPrice * quantity
+    }
+    function clickMinus() {
+        if (quantity < 2) return;
+        quantity = quantity - 1;
+        document.getElementById('quantity-text').innerText = quantity
+        document.getElementById('price').innerText = '$' + currentPrice * quantity
+    }
+    function clickPlus() {
+        quantity = quantity + 1;
+        document.getElementById('quantity-text').innerText = quantity
+        document.getElementById('price').innerText = '$' + currentPrice * quantity
+    }
+    function clickColor1() {
+        document.getElementById('color-1').className = 'product-color-img-selected'
+        document.getElementById('color-2').className = 'product-color-img'
+        document.getElementById('color-3').className = 'product-color-img'
+        document.getElementById('color-4').className = 'product-color-img'
+        color = 'After School Special'
+        colorValue = '#ECBDB0'
+        document.getElementById('color-option-text').innerText = color
+    }
+    function clickColor2() {
+        document.getElementById('color-1').className = 'product-color-img'
+        document.getElementById('color-2').className = 'product-color-img-selected'
+        document.getElementById('color-3').className = 'product-color-img'
+        document.getElementById('color-4').className = 'product-color-img'
+        color = 'Morning Haze'
+        colorValue = '#FFF9F1'
+        document.getElementById('color-option-text').innerText = 'Morning Haze'
+    }
+    function clickColor3() {
+        document.getElementById('color-1').className = 'product-color-img'
+        document.getElementById('color-2').className = 'product-color-img'
+        document.getElementById('color-3').className = 'product-color-img-selected'
+        document.getElementById('color-4').className = 'product-color-img'
+        color = 'Cozy Denim'
+        colorValue = '#4E7CB2'
+        document.getElementById('color-option-text').innerText = color
+    }
+    function clickColor4() {
+        document.getElementById('color-1').className = 'product-color-img'
+        document.getElementById('color-2').className = 'product-color-img'
+        document.getElementById('color-3').className = 'product-color-img'
+        document.getElementById('color-4').className = 'product-color-img-selected'
+        color = 'Rainy Day'
+        colorValue = '#7F878F'
+        document.getElementById('color-option-text').innerText = color
+    }
+    function clickCart() {
+        window.location = 'cart.html'
+    }
+    function clickAddToCart() {
+        // get cart list value from local storage
+        var value = localStorage.getItem('cart')
+        var cartList = []
+        var name = 'Round Pillow';
+        if (value) {
+            // parse the stringified json value to a valid list if possible
+            cartList = JSON.parse(value)
+        }
+        // find the same product
+        const index = cartList.findIndex((item) => {
+            return item.name === name && item.filler === filler && item.color === color
+        })
+        // if the same product found in the cart, just increase its quantity
+        if (index >= 0) {
+            cartList[index].quantity += quantity;
+        } else {
+            // if the product is not found in the cart, add it as a new one
+            var newItem = {
+                name: 'Round Pillow',
+                filler: filler,
+                quantity: quantity,
+                price: currentPrice,
+                color: color,
+                colorValue: colorValue,
+                src: 'img/product-detail-round.png',
+            }
+            cartList.push(newItem)
+        }
+
+        // set the cart list data to localStorage
+        localStorage.setItem('cart', JSON.stringify(cartList))
+
+        // show indicator text
+        var addedCount = document.getElementById('added-count');
+        addedCount.innerText = String(quantity) + ' items added to your cart!';
+        addedCount.style.visibility = 'visible';
+
+        setCartBadge()
+    }
+    var setCartBadge = function () {
+        // get cart list data from localStorage
+        var value = localStorage.getItem('cart')
+        var cartList = []
+        if (value) {
+            cartList = JSON.parse(value)
+        }
+        var cartCount = cartList.reduce((acc, { quantity }) => acc + quantity, 0);
+
+        if (cartCount > 0) {
+            var badge = document.getElementById('cart-badge')
+            badge.innerText = cartCount
+            badge.style.display = 'flex'
+        }
+    }
+
+    window.onload = setCartBadge
+</script>
+
+</html>

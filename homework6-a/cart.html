@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart List</title>
+    <meta charset="UTF-8">
+    <!-- styles -->
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="stylesheet" type="text/css" href="styles/cart.css" />
+</head>
+
+<body style="display: flex; align-items: center; flex-direction: column;">
+    <!-- Navigation Bar -->
+    <div id="nav" class="row justify-center align-center">
+        <div class="nav-left">
+            <div class="dropdown">
+                <button class="dropdown-menu underline">Product</button>
+                <div class="dropdown-content">
+                    <a href="product_bedroom.html" class="underline" style="padding-top:38px;">Bedroom</a>
+                    <a href="product_living.html" class="underline" style="padding-bottom:28px;">Living room</a>
+                </div>
+            </div>
+
+            <a href="about.html" class="underline">About</a>
+        </div>
+
+        <a href="index.html" class="logo">FLUFF PUFF</a>
+        <div class="nav-right">
+            <img onclick="clickCart()" src="img/ico-cart.svg" alt="cart" width="24" height="24">
+            <div id="cart-badge" class="cart-badge"></div>
+        </div>
+    </div>
+
+    <!-- Cart List -->
+
+    <div id="if-cart-list-not-empty" class="row" style="margin-top: 170px;">
+        <!-- list of cart items -->
+        <div class="column">
+            <div class="cart-header-box">
+                <span class="text-24-black">Your Cart</span>
+                <div class="row">
+                    <span class="cart-header-text-wish-count">0 items added to your wishlist!</span>
+                    <div class="cart-header-view-wishlist">
+                        View Wishlist
+                        <img src="img/ico-arrow-right.png">
+                    </div>
+                </div>
+            </div>
+            <div id="cart-list-box" class="column">
+                <!-- cart items will be added programmatically -->
+            </div>
+        </div>
+
+        <!-- total price indicator -->
+        <div class="total-box">
+            <div class="row justify-space-between">
+                <span class="text-16-black">Total</span>
+                <span class="text-16-black" id="cart-total-price"></span>
+            </div>
+            <button class="checkout-button text-16-black">
+                Checkout
+            </button>
+        </div>
+    </div>
+    <div id="if-cart-list-empty" class="column" style="display: none;margin-top: 170px;">
+        <div class="text-24-black" style="margin-bottom: 106px;">
+            Your cart is empty
+        </div>
+
+        <div style="width: 1130px;height: 414px;background:url(img/cart-empty.png);" class="column align-center">
+            <span onclick="clickEmptyText()"
+                style="border-bottom: 1px solid var(--text-black);margin-top: 70px;cursor: pointer;"
+                class="text-24-black">
+                Find a perfect pillow
+                <img src="img/ico-arrow-right-big.png">
+            </span>
+        </div>
+    </div>
+</body>
+
+<script>
+    const loadCartList = function () {
+        // get cart list data from localStorage
+        var value = localStorage.getItem('cart')
+        var cartList = []
+        if (value) {
+            cartList = JSON.parse(value)
+        }
+        var cartCount = cartList.reduce((acc, { quantity }) => acc + quantity, 0);
+
+        if (cartCount > 0) {
+            var badge = document.getElementById('cart-badge')
+            badge.innerText = cartCount
+            badge.style.display = 'flex'
+        }
+
+        if (cartList.length === 0) {
+            // show cart-is-empty-indicating UI
+            document.getElementById('if-cart-list-empty').style.display = 'flex';
+            document.getElementById('if-cart-list-not-empty').style.display = 'none';
+            return;
+        }
+
+        var cartListBox = document.getElementById('cart-list-box')
+        // remove all previous children of cart list to re-draw
+        cartListBox.innerHTML = '';
+
+        var totalPrice = 0;
+
+        // iterate the cart list and create cart element
+        for (let i = 0; i < cartList.length; i++) {
+            const cartData = cartList[i];
+
+            totalPrice += cartData.price * cartData.quantity;
+
+            const elem = document.createElement('div');
+            elem.className = 'row cart-item-box';
+
+            const img = document.createElement('img');
+            img.src = cartData.src;
+            img.width = 121;
+            img.height = 159;
+            elem.appendChild(img);
+
+            const rightBox = document.createElement('div');
+            rightBox.className = 'column cart-item-right-box';
+            elem.appendChild(rightBox);
+
+            const topTextBox = document.createElement('div');
+            topTextBox.className = 'row justify-space-between';
+            topTextBox.style.marginBottom = '8px';
+            rightBox.appendChild(topTextBox);
+
+            const productName = document.createElement('span');
+            productName.className = 'cart-product-name';
+            productName.innerText = cartData.name;
+            topTextBox.appendChild(productName)
+
+            const priceText = document.createElement('span');
+            priceText.className = 'cart-product-name';
+            priceText.innerText = '$' + cartData.price * cartData.quantity;
+            topTextBox.appendChild(priceText)
+
+            const fillerText = document.createElement('div');
+            fillerText.className = 'cart-item-desc-text';
+            fillerText.innerText = cartData.filler;
+            rightBox.appendChild(fillerText)
+
+            const colorTextBox = document.createElement('div');
+            colorTextBox.className = 'row align-center';
+            colorTextBox.style.marginBottom = '6px';
+            rightBox.appendChild(colorTextBox);
+
+            const colorText = document.createElement('span');
+            colorText.className = 'cart-item-desc-text';
+            colorText.innerText = cartData.color;
+            colorTextBox.appendChild(colorText);
+
+            const colorIndicator = document.createElement('div');
+            colorIndicator.className = 'cart-item-color-indicator';
+            colorIndicator.style.background = cartData.colorValue;
+            colorTextBox.appendChild(colorIndicator);
+
+            const bottomBox = document.createElement('div');
+            bottomBox.className = 'row justify-space-between cart-item-bottom-box';
+            rightBox.appendChild(bottomBox);
+
+            const quantityInputBox = document.createElement('div');
+            quantityInputBox.className = 'quantity-input-box';
+            bottomBox.appendChild(quantityInputBox);
+
+            const minusButton = document.createElement('button');
+            minusButton.className = 'quantity-input-left-button';
+            minusButton.onclick = function () {
+                if (cartData.quantity < 2) return;
+                cartList[i].quantity -= 1;
+                localStorage.setItem('cart', JSON.stringify(cartList));
+                loadCartList();
+            }
+            quantityInputBox.appendChild(minusButton);
+
+            const minusIcon = document.createElement('img');
+            minusIcon.src = 'img/ico-minus.png';
+            minusButton.appendChild(minusIcon)
+
+            const quantityText = document.createElement('div');
+            quantityText.className = 'quantity-input-text';
+            quantityText.innerText = cartData.quantity;
+            quantityInputBox.appendChild(quantityText);
+
+            const plusButton = document.createElement('button');
+            plusButton.className = 'quantity-input-right-button';
+            plusButton.onclick = function () {
+                cartList[i].quantity += 1;
+                localStorage.setItem('cart', JSON.stringify(cartList));
+                loadCartList();
+            }
+            quantityInputBox.appendChild(plusButton);
+
+            const plusIcon = document.createElement('img');
+            plusIcon.src = 'img/ico-plus.png';
+            plusButton.appendChild(plusIcon);
+
+            const actionsBox = document.createElement('div');
+            actionsBox.className = 'row';
+            bottomBox.appendChild(actionsBox);
+
+            const removeButton = document.createElement('button');
+            removeButton.className = 'cart-item-action-button';
+            removeButton.innerText = 'Remove';
+            removeButton.style.marginRight = '12px';
+            removeButton.onclick = function () {
+                // discard i'th element from the cart list
+                const newCartList = [...cartList.slice(0, i), ...cartList.slice(i + 1, cartList.length)];
+                localStorage.setItem('cart', JSON.stringify(newCartList));
+                loadCartList();
+            }
+            actionsBox.appendChild(removeButton)
+
+            const wishListButton = document.createElement('button');
+            wishListButton.className = 'cart-item-action-button';
+            wishListButton.innerText = 'Move to Wishlist';
+            actionsBox.appendChild(wishListButton)
+
+
+            cartListBox.appendChild(elem)
+        }
+
+        document.getElementById('cart-total-price').innerText = '$' + totalPrice;
+    }
+
+    function clickEmptyText() {
+        window.location = 'index.html';
+    }
+
+    window.onload = loadCartList
+</script>
+
+</html>
