@@ -112,7 +112,7 @@ function clickAddToCart() {
       price: currentPrice,
       color: color,
       colorValue: colorValue,
-      src: "img/product-detail-couch.png",
+      src: "images/product-detail-couch.png",
     };
     cartList.push(newItem);
   }

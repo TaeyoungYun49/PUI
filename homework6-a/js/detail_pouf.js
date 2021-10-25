@@ -112,7 +112,7 @@ function clickAddToCart() {
       price: currentPrice,
       color: color,
       colorValue: colorValue,
-      src: "img/product-detail-pouf.png",
+      src: "images/product-detail-pouf.png",
     };
     cartList.push(newItem);
   }

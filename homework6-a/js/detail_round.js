@@ -112,7 +112,7 @@ function clickAddToCart() {
       price: currentPrice,
       color: color,
       colorValue: colorValue,
-      src: "img/product-detail-round.png",
+      src: "images/product-detail-round.png",
     };
     cartList.push(newItem);
   }

@@ -99,7 +99,7 @@ const loadCartList = function () {
     quantityInputBox.appendChild(minusButton);
 
     const minusIcon = document.createElement("img");
-    minusIcon.src = "img/ico-minus.png";
+    minusIcon.src = "icons/ico-minus.png";
     minusButton.appendChild(minusIcon);
 
     const quantityText = document.createElement("div");
@@ -117,7 +117,7 @@ const loadCartList = function () {
     quantityInputBox.appendChild(plusButton);
 
     const plusIcon = document.createElement("img");
-    plusIcon.src = "img/ico-plus.png";
+    plusIcon.src = "icons/ico-plus.png";
     plusButton.appendChild(plusIcon);
 
     const actionsBox = document.createElement("div");

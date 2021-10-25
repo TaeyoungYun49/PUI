@@ -112,7 +112,7 @@ function clickAddToCart() {
       price: currentPrice,
       color: color,
       colorValue: colorValue,
-      src: "img/product-detail-bed.png",
+      src: "images/product-detail-bed.png",
     };
     cartList.push(newItem);
   }
