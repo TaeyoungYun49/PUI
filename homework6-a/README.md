@@ -12,8 +12,8 @@ Homework 6a
 
 Website Link: <a href="https://fluff-puff-6a.netlify.app/index.html"> Netlify Deployed Website </a>
 
-A low-fidelity prototype and design choices: The cart on the previous design takes up less than half of the page, but I changed it to the full pageview. I decided to change it in order to provide adequate information about the products with sufficient white space. 
+1. A low-fidelity prototype and design choices: The cart on the previous design takes up less than half of the page, but I changed it to the full pageview. I decided to change it in order to provide adequate information about the products with sufficient white space. 
 
-A high-fidelity digital mockup and design choices:
+2. A high-fidelity digital mockup and design choices:
 <a href="https://www.figma.com/file/nRG88n1pAcfixPyXNyiG7v/Interactive-Prototype-(Develop)?node-id=0%3A1">Link to Figma </a>
 Considering that the list of products gets longer, I moved the total price section to the right, not below the product list. I also added a button to move the product to a wishlist to keep track of the product they are interested in. 
