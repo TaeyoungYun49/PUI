@@ -16,4 +16,4 @@ Website Link: <a href="https://fluff-puff-6a.netlify.app/index.html"> Netlify De
 
 2. A high-fidelity digital mockup and design choices:
 <a href="https://www.figma.com/file/nRG88n1pAcfixPyXNyiG7v/Interactive-Prototype-(Develop)?node-id=0%3A1">Link to Figma </a>
-Considering that the list of products gets longer, I moved the total price section to the right, not below the product list. I also added a button to move the product to a wishlist to keep track of the product they are interested in. 
+Considering potential case that the list of products gets longer, I moved the total price section to the right, not below the product list. I also added a button to move the product to a wishlist to keep track of the product they are interested in. 
