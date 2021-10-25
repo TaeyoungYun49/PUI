@@ -9,8 +9,9 @@ Website Link: <a href="https://fluff-puff-6a.netlify.app/index.html"> Netlify De
 
 <b>Bonus</b>
 1. Created a button for scrolling back to the top of the page using javascript (index.html)
-2. All the feedback from all the product pages reflected in the shopping cart
-3. Used javascript for making an button interface to switch between bedroom and living room on the product page. 
+2. All the options on the product detail page work.
+3. Feedback from all the product pages is reflected in the shopping cart.
+4. Used javascript for making an button interface to switch between bedroom and living room on the product page. 
 
 <b>Design Updates</b>
 1. A low-fidelity prototype and design choices: The cart on the previous design takes up less than half of the page, but I changed it to the full pageview. I decided to change it in order to provide adequate information about the products with sufficient white space. 
