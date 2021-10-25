@@ -1,14 +1,9 @@
 ### Programming Usable Interfaces <br>
 Fall 2021 MHCI Carnegie Mellon University <br>
-Homework 5
+Homework 6a
 
-
-<b>Bonus</b>
-1. Made an about page
-2. Made 4 product detail pages
-3. Created a button for scrolling back to the top of the page using javascript (index.html)
-4. Added dropdown menu on the navigation bar
-5. Embedded Google map using HTML Iframes
-6. Created footer for the website.
+1. HTML+CSS of a shopping cart
+2. Add some JS to the Product Detail page to support different customization options
+3. Add some JS to show feedback for items being added to the shopping cart
 
 Website Link: <a href="https://taeyoung-fluff-puff.netlify.app/index.html"> Netlify Deployed Website </a>
