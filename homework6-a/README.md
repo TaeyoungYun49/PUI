@@ -6,4 +6,4 @@ Homework 6a
 2. Add some JS to the Product Detail page to support different customization options
 3. Add some JS to show feedback for items being added to the shopping cart
 
-Website Link: <a href="https://taeyoung-fluff-puff.netlify.app/index.html"> Netlify Deployed Website </a>
+Website Link: <a href="https://fluff-puff-6a.netlify.app/index.html"> Netlify Deployed Website </a>
