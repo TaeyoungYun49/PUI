@@ -8,8 +8,7 @@ Homework 6a
 
 <b>Bonus</b>
 1. Created a button for scrolling back to the top of the page using javascript (index.html)
-2. Added product pages for all your products, including all feedback and shopping cart
-functionality
+2. All the feedback from all the product pages reflected in the shopping cart
 
 Website Link: <a href="https://fluff-puff-6a.netlify.app/index.html"> Netlify Deployed Website </a>
 
