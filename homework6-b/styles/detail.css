@@ -1,0 +1,35 @@
+.recommended-item-box {
+  margin-top: 80px;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.wrapper {
+  display: grid;
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+}
+
+.item {
+  margin-right: 10px;
+  margin-left: 10px;
+  width: 100px;
+  height: 100px;
+}
+.one {
+}
+
+.two {
+}
+
+.three {
+}
+
+.four {
+}
+
+.five {
+}
