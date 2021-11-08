@@ -155,3 +155,7 @@ function clickEmptyText() {
 }
 
 window.onload = loadCartList;
+
+function clickWishlist() {
+  window.location = "wishlist.html";
+}

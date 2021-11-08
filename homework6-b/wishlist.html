@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <!-- styles -->
     <link rel="stylesheet" type="text/css" href="styles/styles.css" />
-    <link rel="stylesheet" type="text/css" href="styles/cart.css" />
+    <link rel="stylesheet" type="text/css" href="styles/wishlist.css" />
 </head>
 
 <body style="display: flex; align-items: center; flex-direction: column;">
@@ -34,27 +34,36 @@
             <img onclick="clickCart()" class="nav-ico" src="icons/ico-cart.svg" alt="cart" width="24" height="24">
             <div id="cart-badge" class="cart-badge"></div>
         </div>
+
     </div>
 
-    <!-- Cart List -->
+    <!-- WishList -->
 
-    <div id="if-cart-list-not-empty" class="row" style="margin-top: 170px;">
-        <!-- list of cart items -->
+    <div id="if-wishlist-list-not-empty" class="row" style="margin-top: 170px;margin-bottom: 140px;">
+        <!-- wishlist items -->
         <div class="column">
-            <div class="cart-header-box">
+            <div class="wishlist-header-box">
                 <span class="text-24-black">Wishlist</span>
-                <div class="row">
-                    <span class="cart-header-text-wish-count">0 items added to your cart!</span>
-                    <div class="cart-header-view-wishlist">
-                        View Cart
-                        <img src="icons/ico-arrow-right.png" alt="arrow right icon">
-                    </div>
-                </div>
             </div>
-            <div id="cart-list-box" class="column">
-                <!-- cart items will be added programmatically -->
+            <div id="wishlist-list-box" class="column">
+                <!-- wishlist items will be added programmatically -->
             </div>
         </div>
+    </div>
+    <div id="if-wishlist-list-empty" class="column" style="display: none;margin-top: 170px;">
+        <div class="text-24-black" style="margin-bottom: 106px;">
+            Your wishlist is empty
+        </div>
+
+        <div style="width: 1130px;height: 414px;background:url(images/cart-empty.png);" class="column align-center">
+            <span onclick="clickEmptyText()"
+                style="border-bottom: 1px solid var(--text-black);margin-top: 70px;cursor: pointer;"
+                class="text-24-black">
+                Find a perfect pillow
+                <img src="icons/ico-arrow-right-big.png" alt="arrow right icon">
+            </span>
+        </div>
+    </div>
 
 </body>
 

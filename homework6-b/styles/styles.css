@@ -390,6 +390,24 @@ span {
   cursor: pointer;
 }
 
+.button-wishlist {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  border: none;
+  border-radius: 5px;
+  width: 450px;
+  height: 48px;
+  background: none;
+  color: var(--text-black);
+  font-family: "SFUIText-Regular";
+  font-weight: 400;
+  font-size: 12pt;
+  cursor: pointer;
+}
+
 /* image size */
 .wh-100 {
   width: 100%;

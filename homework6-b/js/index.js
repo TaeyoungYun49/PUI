@@ -1,6 +1,11 @@
 function clickCart() {
   window.location = "cart.html";
 }
+
+function clickWishlist() {
+  window.location = "wishlist.html";
+}
+
 window.onload = function () {
   // get cart list data from localStorage
   var value = localStorage.getItem("cart");
@@ -16,7 +21,3 @@ window.onload = function () {
     badge.style.display = "flex";
   }
 };
-
-function clickWishlist() {
-  window.location = "wishlist.html";
-}
