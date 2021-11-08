@@ -12,17 +12,16 @@ Considering potential case that the list of products gets longer, I moved the to
 
 <b>Extra Credit</b>
 
-<b>1. The Wishtlist Functionality</b> (max 3pts)
-- Users can add items to their wishlist and access the wishlist page by clicking the heart icon next to the cart icon. 
-- [Bonus] Users can move items in the wishlist to the cart and vice versa. 
-- [Bonus] The wishlist icon on the Bed Pillow product page fills up when the item is added to the wishlist. 
+<b>1. The Wishtlist Functionality</b> (max 3pts) – Bed Pillow detail page
+- Users can add and remove items to their wishlist and access the wishlist page by clicking the heart icon on the navigation bar. 
+- [Bonus] The heart icon on the “Add to Wishlist” button visually indicates that the item is added to the wishlist. When the item is already in the wishlist, the button text shows “Remove from Wisilist.” 
 
 <b>2. Interesting JavaScript functionality</b> (max 3pts)
-- Included additional animation using javascript to provide playful interaction when users are adding items to wishlist.
+- Additional animation was included to the heart icon to provide playful interaction when users are adding items to the wishlist.
 - A text notification pops up when adding items to shopping cart.
-- Shopping cart page correctly calculates the total price based on user’s selection (Pillow type and filler)
+- The shopping cart page correctly calculates the total price based on the user’s selection (Pillow type and filler)
 
 <b>3. Carousel on ‘Bed Pillow Detail Page’ shows similar products</b> (max 5pts) 
-- The carousel can be manually operated using arrow icons on the side, but automatically scrolls to the right as well. 
+- The carousel can be manually operated using arrow icons on the side but automatically scrolls to the right. 
 
 <b> 4. All the product pages are functional and can be added to shopping cart with the option kept</b> (max 2pts)
