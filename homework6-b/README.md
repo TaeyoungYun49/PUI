@@ -21,6 +21,6 @@ Considering potential case that the list of products gets longer, I moved the to
 - The shopping cart page correctly calculates the total price based on the user’s selection (Pillow type and filler)
 
 3. Carousel on ‘Bed Pillow Detail Page’ shows similar products (max 5pts) 
-The carousel can be manually operated using arrow icons on the side but automatically scrolls to the right. 
+- The carousel can be manually operated using arrow icons on the side but automatically scrolls to the right. 
 
 4. All the product pages are functional and can be added to the shopping cart with the option kept. (max 2pts)
