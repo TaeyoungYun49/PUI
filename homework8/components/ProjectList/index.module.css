@@ -1,0 +1,28 @@
+.project-list {
+  display: flex;
+  flex-direction: row;
+}
+
+.two-column-list-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.one-column-list-container {
+  display: none;
+  flex-direction: column;
+}
+
+.column-list {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (max-width: 1000px) {
+  .two-column-list-container {
+    display: none;
+  }
+  .one-column-list-container {
+    display: flex;
+  }
+}

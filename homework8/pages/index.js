@@ -1,0 +1,269 @@
+import Head from "next/head";
+import { useEffect, useReducer, useRef, useState } from "react";
+import AppHeader from "../components/AppHeader/index";
+import Footer from "../components/Footer";
+import ProjectList from "../components/ProjectList";
+import styles from "../styles/Home.module.css";
+
+export default function Home() {
+  const [pdList] = useState([
+    {
+      src: "/project_thumbs/lunit.png",
+      title: "Lunit INSIGHT CXR, MMG",
+      tags: "ai/ML, HEALTHcare, medical device",
+      description: "Perfecting medical image reading experience with AI",
+    },
+    {
+      src: "/project_thumbs/google.png",
+      title: "Google UX Design Internship",
+      tags: "IoT, voice user interface",
+      description:
+        "Designing UX solutions using smart home IoT devices and mobile apps targeted to families",
+    },
+    {
+      src: "/project_thumbs/lunit_ds.png",
+      title: "Lunit Design System",
+      tags: "Lunit Design System",
+      description:
+        "Constructed a consistent design language for Lunit’s digital products",
+    },
+    {
+      src: "/project_thumbs/walkies.png",
+      title: "Walkies",
+      tags: "community, social media",
+      description:
+        "Designing a social networking platform for better dog walking experience",
+    },
+  ]);
+  const [viList] = useState([
+    {
+      src: "/project_thumbs/spin.png",
+      title: "Spin Dashboard",
+      tags: "interaciton design",
+      description:
+        "An interactive dashboard provides valuable insights for Spin employees, from data analysts to gig workers.",
+    },
+    {
+      src: "/project_thumbs/ux.png",
+      title: "UX Angel",
+      tags: "Figma plugin, ETHICAL DESIGN",
+      description:
+        "A Figma plug-in that features industry examples and resources to help novice designers create more ethical designs.",
+    },
+  ]);
+  const [techList] = useState([
+    {
+      src: "/project_thumbs/color.png",
+      title: "Color-Music Player",
+      tags: "ARDUINO",
+      description:
+        "Bridging visual and auditory sensation to enhance color-associated emotion for color blind people",
+    },
+    {
+      src: "/project_thumbs/wearable.png",
+      title: "Wearable Therapy",
+      tags: "ARDUINO",
+      description: "Turning physical therapy from a chore into a game",
+    },
+  ]);
+  const [isMobile, setIsMobile] = useState(false);
+  const [isMedium, setIsMedium] = useState(false);
+  const [currentCategory, setCurrentCategory] = useState(0);
+  const [bgLeft, setBgLeft] = useState(0);
+  const bgRef = useRef(null);
+  const scrollTimerId = useRef(null);
+  const scrollToTopValues = useRef([]);
+
+  const throttleFunction = function (func, delay) {
+    if (scrollTimerId.current) {
+      return;
+    }
+    scrollTimerId.current = setTimeout(() => {
+      func();
+      scrollTimerId.current = null;
+    }, delay);
+  };
+
+  useEffect(() => {
+    function handleResize() {
+      const isMobile = window.innerWidth <= 390;
+      const isMedium = window.innerWidth > 390 && window.innerWidth <= 1000;
+      setIsMobile(isMobile);
+      setIsMedium(isMedium);
+
+      if (isMobile) {
+        scrollToTopValues.current = [600, 2000, 3400];
+      } else if (window.innerWidth <= 1000) {
+        scrollToTopValues.current = [635, 3170, 5201];
+      } else {
+        scrollToTopValues.current = [550, 1815, 3000];
+      }
+    }
+
+    window.addEventListener("resize", handleResize);
+    handleResize();
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    function scrollBg(index) {
+      const func = () => {
+        let nextLeft = 0;
+        if (index === 0) {
+          nextLeft = 0;
+        } else if (index === 1) {
+          nextLeft = 140;
+        } else {
+          nextLeft = 270;
+        }
+
+        bgRef.current.scroll({
+          left: nextLeft,
+          behavior: "smooth",
+        });
+      };
+
+      throttleFunction(func, 100);
+    }
+
+    function handleScroll() {
+      const y = window.scrollY;
+
+      const section2 = isMobile ? 2000 : isMedium ? 2500 : 1500;
+      const section3 = isMobile ? 3400 : isMedium ? 4050 : 2350;
+
+      if (y < section2) {
+        setCurrentCategory(0);
+        scrollBg(0);
+        setBgLeft({
+          left: "0px",
+        });
+      } else if (y < section3) {
+        setCurrentCategory(1);
+        scrollBg(1);
+        setBgLeft({
+          left: isMobile ? "163px" : "206px",
+          width: isMobile ? "150px" : "206px",
+        });
+      } else {
+        setCurrentCategory(2);
+        scrollBg(2);
+        setBgLeft({
+          left: isMobile ? "340px" : "441px",
+          width: isMobile ? "110px" : "134px",
+        });
+      }
+    }
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isMobile, currentCategory, isMedium]);
+
+  return (
+    <div className={styles.container}>
+      <Head>
+        <title>Create Next App</title>
+        <meta name="description" content="Generated by create next app" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <AppHeader></AppHeader>
+
+      <main className={styles.main}>
+        <h1 className={styles.title}>
+          Taeyoung designs to create
+          <br className={styles["title-br"]}></br> a meaningful social impact{" "}
+          <br className={styles["title-br"]}></br>
+          with aesthetic sensitivity 👀✨
+        </h1>
+
+        <span className={styles["subtitle"]} style={{ marginTop: "32px" }}>
+          Current master’s student at Carnegie Mellon University, majoring in{" "}
+          <span className={styles["underlined"]}>
+            Human-Computer Interaction
+          </span>
+        </span>
+        <span className={styles["subtitle"]} style={{ marginTop: "8px" }}>
+          Previously worked at{" "}
+          <span className={styles["underlined"]}>Lunit</span> as a Product
+          Designer & UX Design Intern at{" "}
+          <span className={styles["underlined"]}>Google Nest</span>
+        </span>
+
+        <div ref={bgRef} className={styles["category-container"]}>
+          <div className={styles["category-menu"]}>
+            <div
+              className={styles["category-button-background"]}
+              style={{
+                ...bgLeft,
+              }}
+            ></div>
+            <button
+              className={styles["category-button"]}
+              style={{
+                marginRight: "20px",
+                color: currentCategory === 0 ? "white" : "#6b6b6b",
+              }}
+              onClick={() => {
+                window.scrollTo({
+                  behavior: "smooth",
+                  top: scrollToTopValues.current[0],
+                });
+              }}
+            >
+              Product Design
+            </button>
+            <button
+              className={styles["category-button"]}
+              style={{
+                marginRight: "20px",
+                color: currentCategory === 1 ? "white" : "#6b6b6b",
+              }}
+              onClick={() => {
+                window.scrollTo({
+                  behavior: "smooth",
+                  top: scrollToTopValues.current[1],
+                });
+              }}
+            >
+              Visual & Interaction
+            </button>
+            <button
+              className={styles["category-button"]}
+              style={{
+                color: currentCategory === 2 ? "white" : "#6b6b6b",
+              }}
+              onClick={() => {
+                window.scrollTo({
+                  behavior: "smooth",
+                  top: scrollToTopValues.current[2],
+                });
+              }}
+            >
+              Technology
+            </button>
+          </div>
+        </div>
+
+        <ProjectList items={pdList}></ProjectList>
+
+        <span className={styles["category-title"]}>
+          Visual & Interaction Design for a delightful user experience ✨
+        </span>
+
+        <ProjectList items={viList}></ProjectList>
+
+        <span className={styles["category-title"]}>
+          🤓 Just a little bit of programming for prototyping
+        </span>
+
+        <ProjectList items={techList}></ProjectList>
+
+        <Footer></Footer>
+      </main>
+    </div>
+  );
+}

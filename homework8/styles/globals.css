@@ -1,0 +1,60 @@
+:root {
+  --navy-color: #01078c;
+}
+
+@font-face {
+  font-family: SF Pro;
+  src: url("/fonts/SF-Pro-Text-Light.otf");
+}
+@font-face {
+  font-family: SF Pro;
+  src: url("/fonts/SF-Pro-Text-Bold.otf");
+  font-weight: 700;
+}
+@font-face {
+  font-family: SF Pro;
+  src: url("/fonts/SF-Pro-Text-Semibold.otf");
+  font-weight: 600;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: SF Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: SF Pro, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+.d-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.d-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.align-center {
+  align-items: center;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}

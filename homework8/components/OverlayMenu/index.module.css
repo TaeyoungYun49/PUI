@@ -1,0 +1,37 @@
+.overlay-container {
+  position: absolute;
+  visibility: collapse;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: white;
+  z-index: 10;
+}
+.work-button {
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: var(--navy-color);
+  font-size: 24px;
+  padding: 0 20px;
+  margin-bottom: 78px;
+  border-radius: 30px;
+}
+.resume-button {
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--navy-color);
+  color: white;
+  font-size: 24px;
+  padding: 0 20px;
+  border-radius: 30px;
+}
